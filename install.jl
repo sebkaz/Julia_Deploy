@@ -1,4 +1,5 @@
 using Pkg
+Pkg.add("JSON3")
 Pkg.add("CSV")
 Pkg.add("GLM")
 Pkg.add("DataFrames")

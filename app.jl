@@ -22,14 +22,15 @@ route("/api_one", method = GET) do
 end
 
 route("/api/predict", method = POST) do
-    value = jsonpayload()
-    pred  = predict(model, DataFrame(size = value["data"]))
+    message = jsonpayload()
+    size_values = message["data"]
+    pred  = predict(model, DataFrame(size = size_values))
   (:data => (value["data"]), :prediction => (pred)) |> json
 end
 
-route("/send") do
+route("/example") do
   response = HTTP.request("POST", "http://localhost:8000/api/predict", 
-  [("Content-Type", "application/json")], """{"data":[1250,1532,2432]}""")
+  [("Content-Type", "application/json")], """{status:"ok","data":[1250,1532,2432]}""")
   response.body |> String |> json
 end
 

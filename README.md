@@ -17,7 +17,7 @@ julia request.jl
 
 GO to Web browser: 
 ```bash
-localhost:8000/send 
+localhost:8000/example 
 ```
 or by GET method
 ```bash

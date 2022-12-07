@@ -7,3 +7,5 @@ Pkg.add("BSON")
 Pkg.add("Genie")
 Pkg.add("HTTP")
 Pkg.add("LinearAlgebra")
+# 
+# to zamienic na project.toml

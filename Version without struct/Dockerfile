@@ -7,11 +7,12 @@ RUN mkdir /app
 
 WORKDIR /app
 
-COPY app.jl install.jl model.bson .
+COPY rest.jl install.jl model.bson .
 
 
 # install all packages 
 Run julia install.jl
+# RUN julia pkg.activate .
 
 EXPOSE 8000
 
